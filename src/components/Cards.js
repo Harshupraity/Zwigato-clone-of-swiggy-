@@ -1,11 +1,13 @@
 import { CDN_IMG_URL } from "./Utils/constants";
-
+import { useContext } from "react";
+import userContext from "./Utils/userContext";
 const Cards = (props)=>{
     console.log(props);
 
     //object destructring.
     const {name,avgRating,costForTwo,cloudinaryImageId}  = props.details;
-    
+    const {loggedInUser} = useContext(userContext)
+
     return (
         <div>
         
@@ -19,6 +21,7 @@ const Cards = (props)=>{
             <div> 
             <div className="avgRating">{avgRating}</div>
                 <div className = "price">{costForTwo} </div>
+                {loggedInUser}
             
             </div>
            

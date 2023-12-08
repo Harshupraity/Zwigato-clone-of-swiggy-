@@ -1,8 +1,15 @@
 import React from "react";
 import useOnline from "./Utils/useOnline";
+// import { userContext } from "./Utils/userContext";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import {Link} from "react-router-dom";
+import { useContext } from "react";
+import userContext from "./Utils/userContext";
+
 const Navbar = () => {
   const onlineStatus = useOnline();
+  const cartItems = useSelector((store) => store.cart.items )
+  const {loggedInUser} = useContext(userContext); 
   return (
     <div className="nav">
      
@@ -17,7 +24,8 @@ const Navbar = () => {
             <li><Link to="/about">About</Link></li>
             <li><Link to="/error">Services</Link></li>
             <li><Link to="/contacts">Contacts</Link></li>
-            <li className="list-none m-2"><Link to="/cart">Carts</Link></li>
+            <li className="list-none m-2"><Link to="/cart">Carts - {cartItems.length} items</Link></li>
+            <li className="px-4">{loggedInUser}</li>
         </ul>
     
     </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import data from "./components/Utils/restaurants"
 import Cards from './components/Cards';
 import Searchbar from './components/Searchbar'
@@ -8,10 +8,11 @@ import Shimmer from './Shimmer';
 // import useOnline from './components/Utils/useOnline';
 import { Link } from 'react-router-dom';
 // import axios from 'axios';
+import userContext from './components/Utils/userContext';
 const Body= ()=>{
 
   
-  
+  const {setUserName} = useContext(userContext);
     // const[filteredData, setFilteredData] = useState(data);
     // const handleFilter  = (e) =>{
     //     setFilteredData(e);
@@ -66,11 +67,15 @@ const Body= ()=>{
         </div>
         <div>
         {(filteredRestaurants ) &&
-       (<TopRatedRestaurants handleChange = {handleChange} filteredRestaurants= {filteredRestaurants} />) 
+       (<TopRatedRestaurants setFilteredRestaurants = {setFilteredRestaurants} filteredRestaurants= {filteredRestaurants} />) 
         }
         </div>
       
-       
+       <input 
+       className='border border-black'
+       onChange={(e) =>{
+        setUserName(e.target.value)
+       }}/>
 
       {/* conditional rendering */}
        {

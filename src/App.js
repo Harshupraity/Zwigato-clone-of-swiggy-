@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Footers from './Footer'
-
+import { useState } from 'react';
 import Navbar from './components/Navbar'
 import Body from './Body'
 import About from './components/About';
@@ -13,6 +13,7 @@ import {BrowserRouter as Router, Routes , Route,Outlet} from "react-router-dom";
 import { useRouteError } from "react-router-dom";
 import { Provider } from 'react-redux';
 import appStore from './components/Utils/appStore';
+import userContext from './components/Utils/userContext';
 
 import RestaurantDetails from './components/RestaurantDetails';
 function ErrorBoundary() {
@@ -24,8 +25,10 @@ function App() {
   const breakSomething = () => {
     throw new Error('Intentional error for testing.');
   };
+  const [username,setUserName] = useState("Ram");
   return (
     <Provider store = {appStore}>
+      <userContext.Provider value= {{loggedInUser:username,setUserName}}>
    < Router>
       <div>
         <Navbar />
@@ -69,7 +72,9 @@ function App() {
     
          
   </Router>
+  </userContext.Provider>
   </Provider>
+  
   );
 }
 

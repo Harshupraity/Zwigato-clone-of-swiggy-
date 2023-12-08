@@ -21,7 +21,7 @@ const Searchbar = ({filteredData,setFilteredRestaurants}) => {
         <input type="search" placeholder="search here!!" onChange = {(e) => setSearchText(e.target.value)}/>
         {/* //on change basically vo value lega jo hame search karni h.so here in input some changes are happening and I want that value */}
       </div>
-      <button onClick = {filterRestaurants}>Search</button>
+      <button onClick = {filterRestaurants} >Search</button>
       {/* //now ab as soon as I click on this button I need to filter karte hue chalo usko. tho onClick m hme filtermethod dalna hoga */}
     </>
   );
