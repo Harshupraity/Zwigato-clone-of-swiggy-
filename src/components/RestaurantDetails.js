@@ -3,14 +3,14 @@ import useRestaurantMenu from "./Utils/useRestaurantMenu";
 import Shimmer from "../Shimmer";
 import { CDN_IMG_URL } from "./Utils/constants";
 import { useDispatch } from "react-redux";
-import { addItem } from "./Utils/cartSlice";
+import { addItems } from "./Utils/cartSlice";
 import { useContext } from "react";
 import userContext  from "./Utils/userContext";
 
 const RestaurantDetails = () =>{
     const dispatch = useDispatch();
     const {id} = useParams();
-    const {addItem } = useContext(userContext);
+    // const {addItem } = useContext(userContext);
     const menu_data = useRestaurantMenu(id);
     if (menu_data === null) return <Shimmer />;
     console.log("menu_data",menu_data);
@@ -31,8 +31,8 @@ const RestaurantDetails = () =>{
    
 
     const handleAddItem = (item) =>{
-        addItem(item)
-        dispatch(addItem)
+        // addItem(item)
+        dispatch(addItems(item))
     }
     return(
         <>
