@@ -62,8 +62,8 @@ const Footer = () => {
        <div className="copyright">© Harsh Upraity</div>
        </div> 
        <div className="social">
-       <Link to='https://github.com/Madan-Agula/Swiggy-Clone' target="_blank"> <div className="clon-img"><FaGithub /></div></Link>  
-        <Link to="https://www.instagram.com/agula.madhan/" target="_blank"><div className="clon-img"><FaInstagram /></div></Link>
+       <Link to='https://github.com/Harshupraity/Zwigato-clone-of-swiggy-' target="_blank"> <div className="clon-img"><FaGithub /></div></Link>  
+        <Link to="https://www.instagram.com" target="_blank"><div className="clon-img"><FaInstagram /></div></Link>
           <div className="clon-img"><FaLinkedin /></div>
           <div className="clon-img"><FaTwitter /></div>
        </div>
