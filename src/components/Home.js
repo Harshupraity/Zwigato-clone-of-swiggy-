@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Footer from "./Footer"
-import NavBar from "./NavBar";
+import NavBar from "./Navbar";
 import '../App.css'
 import { useState } from "react";
 import {useOnline} from "../useOnline"
